@@ -1,17 +1,14 @@
-import { Controller, Get, Post, Body } from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
 import { projectService } from './project.service';
 
-@Controller('polls')
+@Controller('project')
 export class ProjectController {
-  constructor(private readonly pollService:projectService) {}
+  constructor(private readonly projectService:projectService) {}
 
-  @Post()
-  createPoll(@Body() { question, options }: { question: string; options: string[] }) {
-    return this.pollService.createPoll(question, options);
-  }
+ 
 
   @Get()
   getAllPolls() {
-    return this.pollService.getAllPolls();
+    return this.projectService.findAll();
   }
 }

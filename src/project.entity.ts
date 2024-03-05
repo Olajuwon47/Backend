@@ -1,13 +1,28 @@
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity()
-export class project {
+export class  project {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
-  question: string;
+  surname: string;
 
-  @Column('jsonb', { nullable: true })
-  options: string[];
+  @Column()
+  firstname: string;
+
+  @Column()
+  lastname: string;
+
+  @Column()
+  username: string;
+
+  @Column()
+  date : number;
+
+  @Column()
+  Email: string;
+
+  @Column()
+  Password: string;
 }

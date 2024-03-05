@@ -7,15 +7,10 @@ import { project } from './project.entity';
 export class projectService {
   constructor(
     @InjectRepository(project)
-    private readonly pollRepository: Repository<project>,
+    private readonly  projectRepository: Repository<project>,
   ) {}
-
-  async createPoll(question: string, options: string[]): Promise<project> {
-    const poll = this.pollRepository.create({ question, options });
-    return this.pollRepository.save(poll);
-  }
-
-  async getAllPolls(): Promise<project[]> {
-    return this.pollRepository.find();
+  
+  findAll(): Promise<project[]> {
+    return this.projectRepository.find();
   }
 }
