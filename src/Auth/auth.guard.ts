@@ -1,4 +1,4 @@
-import {
+/*import {
     CanActivate,
     ExecutionContext,
     Injectable,
@@ -38,4 +38,4 @@ import {
       const [type, token] = request.headers.authorization?.split(' ') ?? [];
       return type === 'Bearer' ? token : undefined;
     }
-  }
+  }*/
