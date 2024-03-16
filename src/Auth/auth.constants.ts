@@ -1,2 +1,4 @@
-import {  Injectable, InjectionToken } from '@nestjs/common';
-export const MY_TOKEN = new InjectionToken<string>('my-token');
+
+export const jwtConstants = {
+    secret: 'DO NOT USE THIS VALUE. INSTEAD, CREATE A COMPLEX SECRET AND KEEP IT SAFE OUTSIDE OF THE SOURCE CODE.',
+  };

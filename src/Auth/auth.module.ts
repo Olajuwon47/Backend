@@ -1,15 +1,24 @@
 import { Module } from '@nestjs/common';
 import { AuthService } from './auth.service';
-import { MY_TOKEN  } from './auth.constants';
-
+import { AuthController } from './auth.controller';
+import { JwtModule } from '@nestjs/jwt';
+import { UsersModule } from '../users/users.module';
+import { jwtConstants } from './auth.constants';
 
 @Module({
-  providers: [
-    {
-      provide: MY_TOKEN ,
-      useValue:'This is my token value',
-    },
+  imports: [
+    UsersModule,
+    JwtModule.register({
+      global: true,
+      secret: jwtConstants.secret,
+      signOptions: { expiresIn: '60s' },
+    }),
   ],
-  exports:[AuthService],
+  providers: [AuthService],
+  controllers: [AuthController],
+  exports: [AuthService],
 })
 export class AuthModule {}
+
+
+
