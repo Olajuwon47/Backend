@@ -1,7 +1,8 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+// src/entities/user.entity.ts
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
-export class  projectdatabase {
+export class User {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -18,11 +19,13 @@ export class  projectdatabase {
   username: string;
 
   @Column()
-  date : number;
+  
+  dob: string;
 
   @Column()
-  Email: string;
+  email: string;
 
   @Column()
-  Password: string;
+  password: string;
+  userId: any;
 }
