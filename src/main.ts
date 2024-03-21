@@ -1,5 +1,6 @@
-import { NestFactory } from '@nestjs/core';
+import { ApplicationConfig, NestFactory } from '@nestjs/core';
 import { AppModule } from './App.module';
+import { ConsoleLogger } from '@nestjs/common';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -10,6 +11,6 @@ await app.listen(3000);
     methods: ['GET', 'POST'],         // Allow only GET and POST requests
     allowedHeaders: ['Content-Type'], // Allow only headers with Content-Type
   });*/
-  await app.listen(3000);
+  console.log ('Application is running on:http://localhost:3000');
 }
 bootstrap();
